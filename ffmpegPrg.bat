@@ -51,3 +51,11 @@ ffmpeg -i %URL% -t %TIME% -c copy "Output/output1.%CONTR%" -ss %TIME% -c copy "O
 ECHO ----------------------------------------------------------------------------------------------------------------------
 PAUSE
 EXIT
+
+:join
+ECHO.
+SET /P CONTR="[Enter input file container] "
+ffmpeg -f concat -i join.txt -c copy "Output/output.%CONTR%"
+ECHO ----------------------------------------------------------------------------------------------------------------------
+PAUSE
+EXIT
