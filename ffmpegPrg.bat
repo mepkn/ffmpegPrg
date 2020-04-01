@@ -41,3 +41,13 @@ ffmpeg -i %URL% -ss %TIMES% -to %TIMEE% -c copy "Output/output.%CONTR%"
 ECHO ----------------------------------------------------------------------------------------------------------------------
 PAUSE
 EXIT
+
+:split
+ECHO.
+SET /P URL="[Enter File URL] "
+SET /P TIME="[Enter split time] "
+SET /P CONTR="[Enter input file container] "
+ffmpeg -i %URL% -t %TIME% -c copy "Output/output1.%CONTR%" -ss %TIME% -c copy "Output/output2.%CONTR%"
+ECHO ----------------------------------------------------------------------------------------------------------------------
+PAUSE
+EXIT
