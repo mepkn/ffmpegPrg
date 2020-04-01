@@ -14,3 +14,11 @@ if %option% == 4 (goto split)
 if %option% == 5 (goto join)
 ECHO Unknown value 
 goto selection
+
+:information
+ECHO.
+SET /P URL="[Enter File URL] "
+ffmpeg -i %URL% -hide_banner
+ECHO ----------------------------------------------------------------------------------------------------------------------
+PAUSE
+EXIT
