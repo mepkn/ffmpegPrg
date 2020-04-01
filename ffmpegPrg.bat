@@ -30,3 +30,14 @@ ffmpeg -i %URL% -vn "Output/output.mp3"
 ECHO ----------------------------------------------------------------------------------------------------------------------
 PAUSE
 EXIT
+
+:trim
+ECHO.
+SET /P URL="[Enter File URL] "
+SET /P TIMES="[Enter start time] "
+SET /P TIMEE="[Enter end time] "
+SET /P CONTR="[Enter input file container] "
+ffmpeg -i %URL% -ss %TIMES% -to %TIMEE% -c copy "Output/output.%CONTR%"
+ECHO ----------------------------------------------------------------------------------------------------------------------
+PAUSE
+EXIT
