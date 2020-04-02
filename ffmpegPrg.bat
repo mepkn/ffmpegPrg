@@ -1,4 +1,5 @@
 @ECHO OFF
+::code for getting user input and going to respective part of code
 :selection
 ECHO 1 Information
 ECHO 2 Video to Audio
@@ -15,6 +16,7 @@ if %option% == 5 (goto join)
 ECHO Unknown value 
 goto selection
 
+::code for getting video information
 :information
 ECHO.
 SET /P URL="[Enter File URL] "
@@ -23,6 +25,7 @@ ECHO ---------------------------------------------------------------------------
 PAUSE
 EXIT
 
+::code for converting video to audio
 :vta
 ECHO.
 SET /P URL="[Enter File URL] "
@@ -31,6 +34,7 @@ ECHO ---------------------------------------------------------------------------
 PAUSE
 EXIT
 
+::code for trimming video given starting and ending time
 :trim
 ECHO.
 SET /P URL="[Enter File URL] "
@@ -42,6 +46,7 @@ ECHO ---------------------------------------------------------------------------
 PAUSE
 EXIT
 
+::code for splitting video into two parts
 :split
 ECHO.
 SET /P URL="[Enter File URL] "
@@ -52,6 +57,7 @@ ECHO ---------------------------------------------------------------------------
 PAUSE
 EXIT
 
+::code for joining video files whose path is provided in a text file
 :join
 ECHO.
 SET /P CONTR="[Enter input file container] "
